@@ -97,57 +97,7 @@
     </a-scene>
 
     <script>
-      const mapaTour = {
-        'img_pasillo': { 
-          nombre: 'Pasillo', 
-          adelante: 'img_habitación', 
-          atras: null 
-        },
-        'img_habitación': { 
-          nombre: 'Habitación', 
-          adelante: 'img_closet', 
-          atras: 'img_pasillo' 
-        },
-        'img_closet': { 
-          nombre: 'Closet', 
-          adelante: 'img_cabecera', 
-          atras: 'img_habitación' 
-        },
-        'img_cabecera': { 
-          nombre: 'Cabecera', 
-          adelante: null, 
-          atras: 'img_closet' 
-        }
-      };
-
-      let habitacionActual = 'img_pasillo';
-
-      function navegar(direccion) {
-        const destinoID = mapaTour[habitacionActual][direccion];
-        if (destinoID) {
-          actualizarEscena(destinoID);
-        }
-      }
-
-      function actualizarEscena(id) {
-        habitacionActual = id;
-        
-        // 1. Cambiar la imagen 360
-        document.querySelector('#escena-360').setAttribute('src', '#' + id);
-        
-        // 2. Actualizar el nombre en la etiqueta superior
-        document.querySelector('#room-name').innerText = mapaTour[id].nombre;
-
-        // 3. Lógica de visibilidad de los botones
-        const btnAtras = document.querySelector('#btn-atras');
-        const btnAdelante = document.querySelector('#btn-adelante');
-
-        // Mostrar u ocultar flecha izquierda
-        btnAtras.style.display = mapaTour[id].atras ? 'flex' : 'none';
-        
-        // Mostrar u ocultar flecha derecha
-        btnAdelante.style.display = mapaTour[id].adelante ? 'flex' : 'none';
-      }
+const _0x3b12=['img_pasillo','Pasillo','img_habitación','Habitación','img_closet','Closet','img_cabecera','Cabecera','#escena-360','innerText','#room-name','#btn-atras','#btn-adelante','flex','none','setAttribute','style','display','src'];const mapaTour={[_0x3b12[0]]:{nombre:_0x3b12[1],adelante:_0x3b12[2],atras:null},[_0x3b12[2]]:{nombre:_0x3b12[3],adelante:_0x3b12[4],atras:_0x3b12[0]},[_0x3b12[4]]:{nombre:_0x3b12[5],adelante:_0x3b12[6],atras:_0x3b12[2]},[_0x3b12[6]]:{nombre:_0x3b12[7],adelante:null,atras:_0x3b12[4]}};let habitacionActual=_0x3b12[0];function navegar(_0x1a2b){const _0x4c21=mapaTour[habitacionActual][_0x1a2b];if(_0x4c21){actualizarEscena(_0x4c21)}}function actualizarEscena(_0x2f33){habitacionActual=_0x2f33;const _0x5a21=document.querySelector(_0x3b12[8]);if(_0x5a21){_0x5a21[_0x3b12[15]](_0x3b12[18],'#'+_0x2f33)}const _0x31bf=document.querySelector(_0x3b12[10]);if(_0x31bf){_0x31bf[_0x3b12[9]]=mapaTour[_0x2f33].nombre}const _0x12c4=document.querySelector(_0x3b12[11]);const _0x4e21=document.querySelector(_0x3b12[12]);if(_0x12c4&&_0x4e21){_0x12c4[_0x3b12[16]][_0x3b12[17]]=mapaTour[_0x2f33].atras?_0x3b12[13]:_0x3b12[14];_0x4e21[_0x3b12[16]][_0x3b12[17]]=mapaTour[_0x2f33].adelante?_0x3b12[13]:_0x3b12[14]}}window.onload=function(){setTimeout(function(){actualizarEscena(_0x3b12[0])},150)};
     </script>
   </body>
 </html>
