@@ -71,7 +71,7 @@
   <body>
 
     <div class="tour-ui">
-      <div id="room-name" class="room-label">Sótano</div>
+      <div id="room-name" class="room-label">sótano</div>
 
       <img src="https://conceptove.github.io/Concepto/Logo_Blanco.png" class="logo-marca">
       
@@ -82,17 +82,17 @@
 
     <a-scene id="main-scene" embedded>
       <a-assets>
-        <img id="img_Sótano" src="https://conceptove.github.io/Concepto/PER_5.jpg">
-        <img id="img_Televisión" src="https://conceptove.github.io/Concepto/PER_6.jpg">
-        <img id="img_Acceso" src="https://conceptove.github.io/Concepto/PER_7.jpg">
-        <img id="img_Bar" src="https://conceptove.github.io/Concepto/PER_8.jpg">
-        <img id="img_Gimnasio" src="https://conceptove.github.io/Concepto/PER_9.jpg">
-        <img id="img_Jardín" src="https://conceptove.github.io/Concepto/PER_10.jpg">
-        <img id="img_Terraza" src="https://conceptove.github.io/Concepto/PER_11.jpg">
-        <img id="img_Parrillera" src="https://conceptove.github.io/Concepto/PER_12.jpg">
+        <img id="img_sótano" src="https://conceptove.github.io/Concepto/PER_5.jpg">
+        <img id="img_televisión" src="https://conceptove.github.io/Concepto/PER_6.jpg">
+        <img id="img_acceso" src="https://conceptove.github.io/Concepto/PER_7.jpg">
+        <img id="img_bar" src="https://conceptove.github.io/Concepto/PER_8.jpg">
+        <img id="img_gimnasio" src="https://conceptove.github.io/Concepto/PER_9.jpg">
+        <img id="img_jardín" src="https://conceptove.github.io/Concepto/PER_10.jpg">
+        <img id="img_terraza" src="https://conceptove.github.io/Concepto/PER_11.jpg">
+        <img id="img_parrillera" src="https://conceptove.github.io/Concepto/PER_12.jpg">
       </a-assets>
 
-      <a-sky id="escena-360" src="#img_Sótano" rotation="0 -90 0"></a-sky>
+      <a-sky id="escena-360" src="#img_sótano" rotation="0 -90 0"></a-sky>
 
       <a-camera 
         look-controls="magicWindowTrackingEnabled: true; touchEnabled: true; mouseEnabled: true"; 
@@ -102,44 +102,44 @@
 
     <script>
       const mapaTour = {
-        'img_Sótano': { 
+        'img_sótano': { 
           nombre: 'Sótano', 
-          adelante: 'img_Televisión', 
+          adelante: 'img_televisión', 
           atras: null 
         },
-        'img_Televisón': { 
+        'img_televisón': { 
           nombre: 'Televisión', 
-          adelante: 'img_Acceso', 
-          atras: 'img_Sótano' 
+          adelante: 'img_acceso', 
+          atras: 'img_sótano' 
         },
-        'img_Acceso': { 
+        'img_acceso': { 
           nombre: 'Acceso', 
-          adelante: 'img_Bar', 
-          atras: 'img_Televisión' 
+          adelante: 'img_bar', 
+          atras: 'img_televisión' 
         },
-        'img_Bar': { 
+        'img_bar': { 
           nombre: 'Bar', 
-          adelante: 'img_Gimnasio', 
-          atras: 'img_Acceso' 
+          adelante: 'img_gimnasio', 
+          atras: 'img_acceso' 
         },
-        'img_Jardín': { 
+        'img_jardín': { 
           nombre: 'Jardín', 
-          adelante: 'img_Terraza', 
-          atras: 'img_Gimnasio' 
+          adelante: 'img_terraza', 
+          atras: 'img_gimnasio' 
         },
-        'img_Terraza': { 
+        'img_terraza': { 
           nombre: 'Terraza', 
-          adelante: 'img_Parrillera', 
-          atras: 'img_Jardín' 
+          adelante: 'img_parrillera', 
+          atras: 'img_jardín' 
         },
-        'img_Parrillera': { 
+        'img_parrillera': { 
           nombre: 'Parrillera', 
           adelante: null, 
-          atras: 'img_Terraza' 
+          atras: 'img_terraza' 
         }
       };
 
-      let habitacionActual = 'img_Sótano';
+      let habitacionActual = 'img_sótano';
 
       function navegar(direccion) {
         const destinoID = mapaTour[habitacionActual][direccion];
