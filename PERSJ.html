@@ -101,77 +101,7 @@
     </a-scene>
 
     <script>
-      const mapaTour = {
-        'img_sótano': { 
-          nombre: 'Sótano', 
-          adelante: 'img_televisión', 
-          atras: null 
-        },
-        'img_televisión': { 
-          nombre: 'Televisión', 
-          adelante: 'img_acceso', 
-          atras: 'img_sótano' 
-        },
-        'img_acceso': { 
-          nombre: 'Acceso', 
-          adelante: 'img_bar', 
-          atras: 'img_televisión' 
-        },
-        'img_bar': { 
-          nombre: 'Bar', 
-          adelante: 'img_gimnasio', 
-          atras: 'img_acceso'
-        },
-        'img_gimnasio': { 
-          nombre: 'Gimnasio', 
-          adelante: 'img_jardín', 
-          atras: 'img_bar'
-        },
-        'img_jardín': { 
-          nombre: 'Jardín', 
-          adelante: 'img_terraza', 
-          atras: 'img_gimnasio' 
-        },
-        'img_terraza': { 
-          nombre: 'Terraza', 
-          adelante: 'img_parrillera', 
-          atras: 'img_jardín' 
-        },
-        'img_parrillera': { 
-          nombre: 'Parrillera', 
-          adelante: null, 
-          atras: 'img_terraza' 
-        }
-      };
-
-      let habitacionActual = 'img_sótano';
-
-      function navegar(direccion) {
-        const destinoID = mapaTour[habitacionActual][direccion];
-        if (destinoID) {
-          actualizarEscena(destinoID);
-        }
-      }
-
-      function actualizarEscena(id) {
-        habitacionActual = id;
-        
-        // 1. Cambiar la imagen 360
-        document.querySelector('#escena-360').setAttribute('src', '#' + id);
-        
-        // 2. Actualizar el nombre en la etiqueta superior
-        document.querySelector('#room-name').innerText = mapaTour[id].nombre;
-
-        // 3. Lógica de visibilidad de los botones
-        const btnAtras = document.querySelector('#btn-atras');
-        const btnAdelante = document.querySelector('#btn-adelante');
-
-        // Mostrar u ocultar flecha izquierda
-        btnAtras.style.display = mapaTour[id].atras ? 'flex' : 'none';
-        
-        // Mostrar u ocultar flecha derecha
-        btnAdelante.style.display = mapaTour[id].adelante ? 'flex' : 'none';
-      }
+const _0x1b42=['img_sótano','Sótano','img_televisión','Televisión','img_acceso','Acceso','img_bar','Bar','img_gimnasio','Gimnasio','img_jardín','Jardín','img_terraza','Terraza','img_parrillera','Parrillera','#escena-360','innerText','#room-name','#btn-atras','#btn-adelante','flex','none','setAttribute','style','display','src'];const mapaTour={[_0x1b42[0]]:{nombre:_0x1b42[1],adelante:_0x1b42[2],atras:null},[_0x1b42[2]]:{nombre:_0x1b42[3],adelante:_0x1b42[4],atras:_0x1b42[0]},[_0x1b42[4]]:{nombre:_0x1b42[5],adelante:_0x1b42[6],atras:_0x1b42[2]},[_0x1b42[6]]:{nombre:_0x1b42[7],adelante:_0x1b42[8],atras:_0x1b42[4]},[_0x1b42[8]]:{nombre:_0x1b42[9],adelante:_0x1b42[10],atras:_0x1b42[6]},[_0x1b42[10]]:{nombre:_0x1b42[11],adelante:_0x1b42[12],atras:_0x1b42[8]},[_0x1b42[12]]:{nombre:_0x1b42[13],adelante:_0x1b42[14],atras:_0x1b42[10]},[_0x1b42[14]]:{nombre:_0x1b42[15],adelante:null,atras:_0x1b42[12]}};let habitacionActual=_0x1b42[0];function navegar(_0x2e1a){const _0x4f33=mapaTour[habitacionActual][_0x2e1a];if(_0x4f33){actualizarEscena(_0x4f33)}}function actualizarEscena(_0x5d21){habitacionActual=_0x5d21;const _0x1a3c=document.querySelector(_0x1b42[16]);if(_0x1a3c){_0x1a3c[_0x1b42[23]](_0x1b42[26],'#'+_0x5d21)}const _0x3b12=document.querySelector(_0x1b42[18]);if(_0x3b12){_0x3b12[_0x1b42[17]]=mapaTour[_0x5d21].nombre}const _0x4e21=document.querySelector(_0x1b42[19]);const _0x2f11=document.querySelector(_0x1b42[20]);if(_0x4e21&&_0x2f11){_0x4e21[_0x1b42[24]][_0x1b42[25]]=mapaTour[_0x5d21].atras?_0x1b42[21]:_0x1b42[22];_0x2f11[_0x1b42[24]][_0x1b42[25]]=mapaTour[_0x5d21].adelante?_0x1b42[21]:_0x1b42[22]}}window.onload=function(){setTimeout(function(){actualizarEscena(_0x1b42[0])},200)};
     </script>
   </body>
 </html>
