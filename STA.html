@@ -83,12 +83,12 @@
     <a-scene id="main-scene" embedded>
       <a-assets>
         <img id="img_acceso" src="https://conceptove.github.io/Concepto/STA_1.jpg">
-        <img id="img_tecnología" src="https://conceptove.github.io/Concepto/STA_2.jpg">
+        <img id="img_tecnologia" src="https://conceptove.github.io/Concepto/STA_2.jpg">
         <img id="img_servicio" src="https://conceptove.github.io/Concepto/STA_3.jpg">
         <img id="img_caja" src="https://conceptove.github.io/Concepto/STA_4.jpg">
       </a-assets>
 
-      <a-sky id="escena-360" src="#img_acceso" rotation="0 -90 0"></a-sky>
+      <a-sky id="escena-360" src="#img_acceso" rotation="0 -45 0"></a-sky>
 
       <a-camera 
         look-controls="magicWindowTrackingEnabled: true; touchEnabled: true; mouseEnabled: true"; 
@@ -100,10 +100,10 @@
       const mapaTour = {
         'img_acceso': { 
           nombre: 'Acceso', 
-          adelante: 'img_tecnología', 
+          adelante: 'img_tecnologia', 
           atras: null 
         },
-        'img_tecnología': { 
+        'img_tecnologia': { 
           nombre: 'Tecnología', 
           adelante: 'img_servicio', 
           atras: 'img_acceso' 
@@ -111,7 +111,7 @@
         'img_servicio': { 
           nombre: 'Servicio Técnico', 
           adelante: 'img_caja', 
-          atras: 'img_tecnología' 
+          atras: 'img_tecnologia' 
         },
         'img_caja': { 
           nombre: 'Caja', 
