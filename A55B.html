@@ -82,11 +82,11 @@
 
     <a-scene id="main-scene" embedded>
       <a-assets>
-        <img id="img_comedor" src="https://conceptove.github.io/Concepto/A55_6.jpg">
-        <img id="img_recibo" src="https://conceptove.github.io/Concepto/A55_7.jpg">
-        <img id="img_cocina" src="https://conceptove.github.io/Concepto/A55_8.jpg">
-        <img id="img_baño1" src="https://conceptove.github.io/Concepto/A55_9.jpg">
-        <img id="img_baño2" src="https://conceptove.github.io/Concepto/A55_10.jpg">
+        <img id="img_comedor" src="https://conceptove.github.io/Concepto/A55_1.jpg">
+        <img id="img_recibo" src="https://conceptove.github.io/Concepto/A55_2.jpg">
+        <img id="img_cocina" src="https://conceptove.github.io/Concepto/A55_3.jpg">
+        <img id="img_baño1" src="https://conceptove.github.io/Concepto/A55_4.jpg">
+        <img id="img_baño2" src="https://conceptove.github.io/Concepto/A55_5.jpg">
       </a-assets>
 
       <a-sky id="escena-360" src="#img_comedor" rotation="0 -90 0"></a-sky>
@@ -98,7 +98,62 @@
     </a-scene>
 
     <script>
-const _0x4d12=['img_comedor','Comedor','img_recibo','Recibo','img_cocina','Cocina','img_baño1','Baño','img_baño2','#escena-360','innerText','#room-name','#btn-atras','#btn-adelante','flex','none','setAttribute','style','display','src'];const mapaTour={[_0x4d12[0]]:{nombre:_0x4d12[1],adelante:_0x4d12[2],atras:null},[_0x4d12[2]]:{nombre:_0x4d12[3],adelante:_0x4d12[4],atras:_0x4d12[0]},[_0x4d12[4]]:{nombre:_0x4d12[5],adelante:_0x4d12[6],atras:_0x4d12[2]},[_0x4d12[6]]:{nombre:_0x4d12[7],adelante:_0x4d12[8],atras:_0x4d12[4]},[_0x4d12[8]]:{nombre:_0x4d12[7],adelante:null,atras:_0x4d12[6]}};let habitacionActual=_0x4d12[0];function navegar(_0x1a8f){const _0x3e21=mapaTour[habitacionActual][_0x1a8f];if(_0x3e21){actualizarEscena(_0x3e21)}}function actualizarEscena(_0x2d11){habitacionActual=_0x2d11;const _0x5b34=document.querySelector(_0x4d12[9]);if(_0x5b34){_0x5b34[_0x4d12[16]](_0x4d12[19],'#'+_0x2d11)}const _0x1c89=document.querySelector(_0x4d12[11]);if(_0x1c89){_0x1c89[_0x4d12[10]]=mapaTour[_0x2d11].nombre}const _0x3a21=document.querySelector(_0x4d12[12]);const _0x4f89=document.querySelector(_0x4d12[13]);if(_0x3a21&&_0x4f89){_0x3a21[_0x4d12[17]][_0x4d12[18]]=mapaTour[_0x2d11].atras?_0x4d12[14]:_0x4d12[15];_0x4f89[_0x4d12[17]][_0x4d12[18]]=mapaTour[_0x2d11].adelante?_0x4d12[14]:_0x4d12[15]}}window.onload=function(){setTimeout(function(){actualizarEscena(_0x4d12[0])},200)};
+      const mapaTour = {
+        'img_comedor': { 
+          nombre: 'Comedor', 
+          adelante: 'img_recibo', 
+          atras: null 
+        },
+        'img_recibo': { 
+          nombre: 'Recibo', 
+          adelante: 'img_cocina', 
+          atras: 'img_comedor' 
+        },
+        'img_cocina': { 
+          nombre: 'Cocina', 
+          adelante: 'img_baño1', 
+          atras: 'img_recibo' 
+        },
+        'img_baño1': { 
+          nombre: 'Baño', 
+          adelante: 'img_baño2', 
+          atras: 'img_cocina' 
+        },
+        'img_baño2': { 
+          nombre: 'Baño', 
+          adelante: null, 
+          atras: 'img_baño1' 
+        }
+      };
+
+      let habitacionActual = 'img_comedor';
+
+      function navegar(direccion) {
+        const destinoID = mapaTour[habitacionActual][direccion];
+        if (destinoID) {
+          actualizarEscena(destinoID);
+        }
+      }
+
+      function actualizarEscena(id) {
+        habitacionActual = id;
+        
+        // 1. Cambiar la imagen 360
+        document.querySelector('#escena-360').setAttribute('src', '#' + id);
+        
+        // 2. Actualizar el nombre en la etiqueta superior
+        document.querySelector('#room-name').innerText = mapaTour[id].nombre;
+
+        // 3. Lógica de visibilidad de los botones
+        const btnAtras = document.querySelector('#btn-atras');
+        const btnAdelante = document.querySelector('#btn-adelante');
+
+        // Mostrar u ocultar flecha izquierda
+        btnAtras.style.display = mapaTour[id].atras ? 'flex' : 'none';
+        
+        // Mostrar u ocultar flecha derecha
+        btnAdelante.style.display = mapaTour[id].adelante ? 'flex' : 'none';
+      }
     </script>
   </body>
 </html>
